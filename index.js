@@ -1,7 +1,11 @@
 const peerflix = require('peerflix');
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000;
+
+// Use the CORS middleware
+app.use(cors());
 
 app.get('/stream', (req, res) => {
     const magnetURI = req.query.magnet;
