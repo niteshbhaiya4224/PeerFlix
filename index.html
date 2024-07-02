@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <video id="videoPlayer" controls></video>
+
+    <script>
+      function downloadTorrent(magnetURI) {
+        fetch(
+          `https://peer-flix-jmfpt758c-niteshbhaiya4224s-projects.vercel.app/stream?magnet=${encodeURIComponent(
+            magnetURI
+          )}`
+        )
+          .then((response) => response.text())
+          .then((streamURL) => {
+            console.log("Stream URL:", streamURL);
+            // Use the stream URL to play or download the content
+            // Example: You can set the stream URL to a video element's src attribute
+            const videoElement = document.getElementById("videoPlayer");
+            videoElement.src = streamURL;
+          })
+          .catch((error) => console.error("Error:", error));
+      }
+
+      // Example usage
+      const magnetURI = "your-magnet-link-here";
+      downloadTorrent(magnetURI);
+    </script>
+  </body>
+</html>
