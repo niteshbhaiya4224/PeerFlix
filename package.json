@@ -1,0 +1,13 @@
+{
+    "name": "peerflix-server",
+    "version": "1.0.0",
+    "description": "A Node.js server for streaming torrents with Peerflix",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "express": "^4.19.2",
+        "peerflix": "^0.39.0"
+    }
+}
